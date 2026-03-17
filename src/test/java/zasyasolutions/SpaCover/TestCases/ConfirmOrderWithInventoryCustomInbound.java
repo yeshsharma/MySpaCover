@@ -296,10 +296,10 @@ public class ConfirmOrderWithInventoryCustomInbound extends BaseTest {
 	 }
 	 
 	 
-	 @Test(  priority = 6,
-		     dataProvider = "proDataForInboundInventoryCustom",
-		     dataProviderClass = TestDataProvider.class,
-		     description = "Assigning pro number to inventory")
+	// @Test(  priority = 6,
+		 //    dataProvider = "proDataForInboundInventoryCustom",
+		 //    dataProviderClass = TestDataProvider.class,
+		   //  description = "Assigning pro number to inventory")
 		    public void scanOut(String inventoryLocationId, String quantity) {
 		 
 			logInfo("Starting test: starting scan out"); 

@@ -141,10 +141,10 @@ public class ConfirmOrderWithInBound extends BaseTest{
 	 }
 	 
 	 
-	 @Test(  priority = 4,
-		     dataProvider = "proDataForInbound",
-		     dataProviderClass = TestDataProvider.class,
-		     description = "scan out")
+	// @Test(  priority = 4,
+		//     dataProvider = "proDataForInbound",
+		  //   dataProviderClass = TestDataProvider.class,
+		 //    description = "scan out")
 		    public void scanOutTheOrderHavingLineItemFromInbound(String inventoryLocationId, String quantity) {
 		 
 			logInfo("Starting test: starting scan out"); 

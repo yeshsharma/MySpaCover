@@ -65,22 +65,6 @@ public class ConfirmOrderApiWithInventory extends BaseTest {
 
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	 @Test(priority = 2, description = "Confirm order with inventtory ")
 	public void confirmOrderAllLineItmesArefromInventory() {
@@ -139,6 +123,7 @@ public class ConfirmOrderApiWithInventory extends BaseTest {
 		// ===== Assert response =====
 		Assert.assertEquals(response.getStatusCode(), 201, "API failed! Expected 200 but got "
 				+ response.getStatusCode() + ". Response: " + response.getBody().asString());
+		
 	}
 
 	 @Test(priority = 3, description = "Order Update changing the order line item sku")
