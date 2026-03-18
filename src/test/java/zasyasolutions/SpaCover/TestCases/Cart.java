@@ -13,7 +13,9 @@ package zasyasolutions.SpaCover.TestCases;
 	import org.testng.Assert;
 	import org.testng.annotations.*;
 
-	import java.time.Duration;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+import java.time.Duration;
 	import java.util.List;
 
 	public class Cart {
@@ -23,6 +25,7 @@ package zasyasolutions.SpaCover.TestCases;
 
 	    @BeforeMethod
 	    public void setup() {
+	    	 WebDriverManager.chromedriver().setup();
 
 	        ChromeOptions options = new ChromeOptions();
 	        options.addArguments("--headless=new");   // Headless mode
