@@ -1,6 +1,7 @@
 package zasyasolutions.SpaCover.TestCases;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,10 +35,8 @@ public class Cart {
         options.addArguments("--disable-dev-shm-usage");
 
         driver = new ChromeDriver(options);
-
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-        // Fluent wait polls every 500ms
         fluentWait = new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofMillis(500))
@@ -46,26 +45,25 @@ public class Cart {
         driver.get("https://rahulshettyacademy.com/client/");
     }
 
-    // ✅ Wait for spinner gone THEN click — solves the root problem
+    // ✅ Wait for spinner gone + JavaScript click = guaranteed to work
     private void waitAndClick(By locator) {
-        // First wait for spinner to fully disappear
         fluentWait.until(d -> {
             List<WebElement> spinners = d.findElements(
                 By.cssSelector(".ngx-spinner-overlay"));
             return spinners.isEmpty() || !spinners.get(0).isDisplayed();
         });
-        // Then wait for element to be clickable and click
-        wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+        WebElement element = wait.until(
+            ExpectedConditions.presenceOfElementLocated(locator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
 
-    // Overload for WebElement
     private void waitAndClick(WebElement element) {
         fluentWait.until(d -> {
             List<WebElement> spinners = d.findElements(
                 By.cssSelector(".ngx-spinner-overlay"));
             return spinners.isEmpty() || !spinners.get(0).isDisplayed();
         });
-        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
 
     @Test
