@@ -112,22 +112,35 @@ public class Cart {
 
         Assert.assertTrue(productFound, "Product not found in cart");
 
-        // Country Selection
+         //Country Selection
         WebElement countryInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.cssSelector("[placeholder='Select Country']")));
-        countryInput.sendKeys("I");
-        countryInput.sendKeys("N");
-        countryInput.sendKeys("D");
-        countryInput.sendKeys("I");
-        countryInput.sendKeys("A");
-        List<WebElement> dropdownOptions = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
-                By.cssSelector(".ta-item.list-group-item")));
-
-        for (WebElement option : dropdownOptions) {
-            if (option.getText().trim().equals("India")) {
-                waitAndClick(option);
-                break;
-            }
+//        countryInput.sendKeys("I");
+//        countryInput.sendKeys("N");
+//        countryInput.sendKeys("D");
+//        countryInput.sendKeys("I");
+//        countryInput.sendKeys("A");
+        
+     // ✅ Send each key and wait for dropdown to respond after each one
+//        String country = "India";
+//        for (char c : country.toCharArray()) {
+//            countryInput.sendKeys(String.valueOf(c));
+//            // Wait for dropdown list to appear/update after each keystroke
+//            wait.until(ExpectedConditions.presenceOfElementLocated(
+//                    By.cssSelector(".ta-item.list-group-item")));
+//        }
+//
+//        
+//        
+//        
+//        List<WebElement> dropdownOptions = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+//                By.cssSelector(".ta-item.list-group-item")));
+//
+//        for (WebElement option : dropdownOptions) {
+//            if (option.getText().trim().equals("India")) {
+//                waitAndClick(option);
+//                break;
+//            }
         }
 
         // Fill details
