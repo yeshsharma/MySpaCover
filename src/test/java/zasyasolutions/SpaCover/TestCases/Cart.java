@@ -128,12 +128,12 @@ public class Cart {
         }
 
         // Fill details
-        wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.cssSelector(".field.small input.txt:nth-child(1)")))
-                .sendKeys("223");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.cssSelector(".field input.txt:nth-child(3)")))
-                .sendKeys("yesh");
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(
+//                By.cssSelector(".field.small input.txt:nth-child(1)")))
+//                .sendKeys("223");
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(
+//                By.cssSelector(".field input.txt:nth-child(3)")))
+//                .sendKeys("yesh");
 
         // Submit Order
 //        waitAndClick(By.cssSelector(".actions .action__submit"));
