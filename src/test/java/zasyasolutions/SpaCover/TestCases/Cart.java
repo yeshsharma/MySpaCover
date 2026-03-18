@@ -117,8 +117,9 @@ public class Cart {
                 By.cssSelector("[placeholder='Select Country']")));
         countryInput.sendKeys("I");
         countryInput.sendKeys("N");
-        countryInput.sendKeys("DIA");
-
+        countryInput.sendKeys("D");
+        countryInput.sendKeys("I");
+        countryInput.sendKeys("A");
         List<WebElement> dropdownOptions = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
                 By.cssSelector(".ta-item.list-group-item")));
 
