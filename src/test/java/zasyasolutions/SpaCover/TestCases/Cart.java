@@ -236,7 +236,7 @@ public class Cart {
     }
 
     @Test
-    public void addToCartTest() {
+    public void addToCartTest() throws InterruptedException {
 
         // Login
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("userEmail")))
@@ -263,9 +263,7 @@ public class Cart {
             }
         }
 
-        // ✅ Wait for spinner after Add to Cart
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(
-                By.cssSelector(".ngx-spinner-overlay")));
+      driver.wait(4000);
 
         // Go to Cart
         wait.until(ExpectedConditions.visibilityOfElementLocated(
