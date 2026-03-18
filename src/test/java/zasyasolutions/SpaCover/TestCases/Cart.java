@@ -29,6 +29,10 @@ package zasyasolutions.SpaCover.TestCases;
 	        options.addArguments("--window-size=1920,1080"); // Important for UI rendering
 	        options.addArguments("--disable-gpu");
 	        options.addArguments("--no-sandbox");
+	        options.addArguments("--disable-dev-shm-usage");       // ✅ add this
+	        options.addArguments("--disable-extensions");           // ✅ add this
+	        options.addArguments("--disable-popup-blocking");       // ✅ add this
+	        options.addArguments("--remote-allow-origins=*");  
 
 	        driver = new ChromeDriver(options);
 	        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
