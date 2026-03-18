@@ -9,6 +9,7 @@
       <class name="zasyasolutions.SpaCover.TestCases.ConfirmOrderApiWithInventory"/>
       <class name="zasyasolutions.SpaCover.TestCases.ConfirmOrderWithInBound"/>
   <class name="zasyasolutions.SpaCover.TestCases.ConfirmOrderWithInventoryCustomInbound"/>
+  <class name="zasyasolutions.SpaCover.TestCases.Cart"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
