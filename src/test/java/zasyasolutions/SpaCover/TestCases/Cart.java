@@ -136,7 +136,7 @@ public class Cart {
         countryInput.sendKeys("India");
 
         List<WebElement> dropdownOptions = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
-                By.cssSelector(".ta-item.list-group-item")));
+                By.cssSelector(".ta-item.list-group-items")));
 
         for (WebElement option : dropdownOptions) {
             if (option.getText().trim().equals("India")) {
