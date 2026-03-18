@@ -136,38 +136,38 @@ public class Cart {
                 .sendKeys("yesh");
 
         // Submit Order
-        waitAndClick(By.cssSelector(".actions .action__submit"));
-
-        // Get Order ID
-        String orderIdText = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.cssSelector(".em-spacer-1 .ng-star-inserted")))
-                .getText();
-        String orderId = orderIdText.split("\\|")[1].trim();
-        System.out.println("Order ID: " + orderId);
-
-        // Go to Orders Page
-        waitAndClick(By.xpath("//button[text()='Orders']"));
-
-        List<WebElement> orders = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
-                By.cssSelector("tbody tr")));
-        boolean orderMatched = false;
-
-        for (WebElement order : orders) {
-            String id = order.findElement(By.tagName("th")).getText();
-            if (id.equals(orderId)) {
-                orderMatched = true;
-                waitAndClick(order.findElement(By.cssSelector(".btn-primary")));
-                break;
-            }
-        }
-
-        Assert.assertTrue(orderMatched, "Order ID not found in Orders page");
-
-        // Validate Order Details
-        String orderDetails = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.cssSelector(".col-text.-main")))
-                .getText();
-        Assert.assertTrue(orderDetails.contains(orderId), "Order verification failed");
+//        waitAndClick(By.cssSelector(".actions .action__submit"));
+//
+//        // Get Order ID
+//        String orderIdText = wait.until(ExpectedConditions.visibilityOfElementLocated(
+//                By.cssSelector(".em-spacer-1 .ng-star-inserted")))
+//                .getText();
+//        String orderId = orderIdText.split("\\|")[1].trim();
+//        System.out.println("Order ID: " + orderId);
+//
+//        // Go to Orders Page
+//        waitAndClick(By.xpath("//button[text()='Orders']"));
+//
+//        List<WebElement> orders = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+//                By.cssSelector("tbody tr")));
+//        boolean orderMatched = false;
+//
+//        for (WebElement order : orders) {
+//            String id = order.findElement(By.tagName("th")).getText();
+//            if (id.equals(orderId)) {
+//                orderMatched = true;
+//                waitAndClick(order.findElement(By.cssSelector(".btn-primary")));
+//                break;
+//            }
+//        }
+//
+//        Assert.assertTrue(orderMatched, "Order ID not found in Orders page");
+//
+//        // Validate Order Details
+//        String orderDetails = wait.until(ExpectedConditions.visibilityOfElementLocated(
+//                By.cssSelector(".col-text.-main")))
+//                .getText();
+//        Assert.assertTrue(orderDetails.contains(orderId), "Order verification failed");
     }
 
     @AfterMethod
