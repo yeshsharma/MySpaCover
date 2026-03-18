@@ -25,7 +25,7 @@ package zasyasolutions.SpaCover.TestCases;
 	    public void setup() {
 
 	        ChromeOptions options = new ChromeOptions();
-	       // options.addArguments("--headless=new");   // Headless mode
+	        options.addArguments("--headless=new");   // Headless mode
 	        options.addArguments("--window-size=1920,1080"); // Important for UI rendering
 	        options.addArguments("--disable-gpu");
 	        options.addArguments("--no-sandbox");
