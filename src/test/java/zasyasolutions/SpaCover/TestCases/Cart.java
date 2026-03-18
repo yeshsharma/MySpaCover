@@ -115,7 +115,9 @@ public class Cart {
         // Country Selection
         WebElement countryInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.cssSelector("[placeholder='Select Country']")));
-        countryInput.sendKeys("India");
+        countryInput.sendKeys("I");
+        countryInput.sendKeys("N");
+        countryInput.sendKeys("DIA");
 
         List<WebElement> dropdownOptions = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
                 By.cssSelector(".ta-item.list-group-item")));
