@@ -265,7 +265,7 @@ public class Cart {
 
         // Go to Cart
         wait.until(ExpectedConditions.elementToBeClickable(
-                By.cssSelector("[routerlink*='cart']"))).click();
+                By.xpath("//button[@routerlink='/dashboard/cart']"))).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div li")));
 
