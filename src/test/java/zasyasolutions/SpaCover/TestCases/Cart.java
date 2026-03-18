@@ -231,7 +231,7 @@ public class Cart {
 
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        driver.manage().window().maximize();
+       // driver.manage().window().maximize();
         driver.get("https://rahulshettyacademy.com/client/");
     }
 
