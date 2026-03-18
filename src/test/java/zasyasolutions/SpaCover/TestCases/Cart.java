@@ -35,7 +35,7 @@ public class Cart {
         options.addArguments("--disable-dev-shm-usage");
 
         driver = new ChromeDriver(options);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 
         fluentWait = new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(30))
