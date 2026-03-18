@@ -263,6 +263,10 @@ public class Cart {
             }
         }
 
+        // ✅ Wait for spinner after Add to Cart
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(
+                By.cssSelector(".ngx-spinner-overlay")));
+
         // Go to Cart
         wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//button[@routerlink='/dashboard/cart']"))).click();
